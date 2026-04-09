@@ -1,0 +1,19 @@
+dataset:
+  json_file: data/annotations/annotation_all.json
+  video_dir: 
+    - "data/FineBio/03 finebio_videos_fpv_all_w640"
+    - "data/FineBio/10 finebio_videos_tpv_all_w640/finebio_videos_w640"
+  label2id_dir: data/annotations
+  sampling_rate: 1
+  frames_per_clip: 16
+  allow_clip_overlap: True
+  random_view: False
+init_rand_seed: 2708
+classifier:
+  embed_dim: 1024 # vit large
+  num_heads: 16 # must be divisible by embed dim
+  num_blocks: 4
+opt:
+  lr: 0.000425
+  wd: 0.04
+  warmup: 5
