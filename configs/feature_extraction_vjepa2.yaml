@@ -1,0 +1,9 @@
+classifier: # classifier config must match with the trained config
+  embed_dim: 1024 # vit large
+  num_heads: 16 # must be divisible by embed dim
+  num_blocks: 4
+video_dir: "data/FineBio/03 finebio_videos_fpv_all_w640"
+decode_kwargs:
+  frames_per_clip: 16
+  clip_stride: 4
+  sampling_rate: 1
