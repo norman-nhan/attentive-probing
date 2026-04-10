@@ -8,7 +8,7 @@ import torch.backends.cudnn as cudnn
 
 from decord import VideoReader, cpu
 
-from probing.metrics import ClassMeanRecall
+from utils.metrics import ClassMeanRecall
 
 def decode_clip(batch):
     buffers = []

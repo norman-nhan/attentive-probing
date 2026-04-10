@@ -7,7 +7,7 @@ from glob import glob
 
 import torch
 import torch.nn as nn
-from utils.attentive_pooler import AttentivePooler
+from src.utils.attentive_pooler import AttentivePooler
 
 class AttentiveClassifier(nn.Module):
     def __init__(
