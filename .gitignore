@@ -2,3 +2,6 @@
 *.pt
 *__pycache__
 *.vscode
+
+# ignore output folder because it's big
+*feats

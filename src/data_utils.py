@@ -43,7 +43,8 @@ def get_video_paths(data_dir, target_view_id:str="T0", min_par_id:int=0):
 def decode_video_to_clips(video_path,
                         frames_per_clip:int,
                         clip_stride:int,
-                        sampling_rate:int=1):
+                        sampling_rate:int=1,
+                        num_threads:int=0):
     """Decode and split video to multiple clips.
     
     - Number of clips depends on clip_stride.
@@ -70,7 +71,7 @@ def decode_video_to_clips(video_path,
     assert sampling_rate > 0, "sampling rate must be greater than 0."
     
     # === decode video ===
-    vr = VideoReader(video_path, ctx=cpu(0))
+    vr = VideoReader(video_path, ctx=cpu(0), num_threads=num_threads)
     total_frames = len(vr)
     
     _num_clips = (total_frames + clip_stride -1) // clip_stride
